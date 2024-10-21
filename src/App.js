@@ -1,10 +1,15 @@
 
 import './App.css';
+import BodyFunction from './menu/Body';
+import FooterMenu from './menu/footer-menu';
+import HeaderMenu from './menu/header-menu';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className='text-3xl font-bold underline'>Hello World</h1>
+    <div className="App font-default">
+      <HeaderMenu/>
+      <BodyFunction/>
+      <FooterMenu/>
     </div>
   );
 }
