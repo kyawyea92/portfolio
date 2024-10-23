@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 
 const Carousel = () => {
   const images = [
-    {path:'/images/person.jpg',description :"Over 9 years of working experience in Software Development field as Project Leader. Strong experience in planning, scheduling, budgeting, execution, and delivery of software and web project."},
-    {path:'/images/person.jpg',description :"Good experience in developing reports on project progress, testing the product prototypes, providing quality assurance tests on the final products. Have experience in determining and overseeing consistent testing, evaluation, and troubleshooting of all products in all stages of completion"},
-    {path:'/images/person.jpg',description :"Report to Project Manager and supervised the software development team"},
+    {path:'/images/My_Photo.jpg',description :"Over 9 years of working experience in Software Development field as Project Leader. Strong experience in planning, scheduling, budgeting, execution, and delivery of software and web project."},
+    {path:'/images/My_Photo.jpg',description :"Good experience in developing reports on project progress, testing the product prototypes, providing quality assurance tests on the final products. Have experience in determining and overseeing consistent testing, evaluation, and troubleshooting of all products in all stages of completion"},
+    {path:'/images/My_Photo.jpg',description :"Report to Project Manager and supervised the software development team"},
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
