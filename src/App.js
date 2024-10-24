@@ -6,6 +6,7 @@ import FooterMenu from './menu/footer-menu';
 import HeaderMenu from './menu/header-menu';
 import Blogs from './blogs/Blogs';
 import SignIn from './registration/SignIn';
+import Courses from './courses/Courses';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path='/' element={<BodyFunction/>}/>
           <Route path='/blogs' element={<Blogs/>} />
           <Route path='/logIn' element={<SignIn/>} />
+          <Route path="/courseList" element={<Courses/>}/>
         </Routes>
         <FooterMenu/>
       </BrowserRouter>

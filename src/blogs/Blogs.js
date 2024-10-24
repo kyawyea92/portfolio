@@ -1,3 +1,7 @@
+import SideMenu from "./SideMenu";
+
 export default function Blogs(){
-    return(<div><h1>This is blog.</h1></div>)
+    return(<div>
+        <SideMenu/>
+    </div>)
 }

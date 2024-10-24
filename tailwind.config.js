@@ -17,7 +17,8 @@ module.exports = {
       },
       fontFamily: {
         default: ['Afacad Flux', 'sans-serif',],
-        bla: ['Playwrite GB S', 'cursive'] 
+        bla: ['Playwrite GB S', 'cursive'],
+        oswald: ['Oswald', 'sans-serif'],
       },
     },
   },

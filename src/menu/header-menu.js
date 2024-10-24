@@ -107,7 +107,7 @@ export default function HeaderMenu() {
           </Popover>
           <Link to="/blogs" className='text-sm font-semibold leading-6 text-gray-900'>Blogs</Link>
         
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/courseList" className="text-sm font-semibold leading-6 text-gray-900">
             Courses
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
@@ -127,11 +127,11 @@ export default function HeaderMenu() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
               <img
                 alt=""
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600"
+                src="/images/FOC.jpg"
                 className="h-8 w-auto"
               />
             </a>
@@ -166,13 +166,13 @@ export default function HeaderMenu() {
                   </DisclosurePanel>
                 </Disclosure>
                 <a
-                  href="#"
+                  href="/blogs"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
-                  Features
+                  Blogs
                 </a>
                 <a
-                  href="#"
+                  href="/courseList"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Courses
@@ -183,10 +183,16 @@ export default function HeaderMenu() {
                 >
                   Company
                 </a>
+                <a
+                  href="#"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                >
+                  Contact
+                </a>
               </div>
               <div className="py-6">
                 <a
-                  href="#"
+                  href="/logIn"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in
