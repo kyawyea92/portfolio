@@ -1,7 +1,9 @@
+import Carousel from "../body/Carousel";
+
 function Course() {
   return (
-    <div className="flex justify-center my-10">
-      <div class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div className="">
+      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
         <a href="#">
           <img
             class="rounded-t-lg"
@@ -79,8 +81,13 @@ function Course() {
 }
 export default function Courses() {
   return (
-    <div className="grid grid-cols-4 gap-4 mx-20">
-      <Course />
-    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <Course/>
+        <Course/>
+        <Course/>
+        <Course/>
+        <Course/>
+        <Course/>
+</div>
   );
 }
