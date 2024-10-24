@@ -13,7 +13,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000); // Change image every 5 seconds
+    }, 10000); // Change image every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, [images.length]);
