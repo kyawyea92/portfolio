@@ -1,23 +1,15 @@
-import { Link } from "react-router-dom";
-import Carousel from "../body/Carousel";
+import Accordian, { AccordianItem } from "./Accordion";
 
-function Course() {
+export default function CourseInfo() {
   return (
-    <div className="">
-      <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <Link to="/courseInfo">
-          <img
-            class="rounded-t-lg"
-            src="/images/FOC.jpg"
-            alt="courseImages"
-          />
-        
-        <div class="px-5 pb-5">
-          <a href="#">
-            <h5 class="text-left text-2xl mt-3 font-semibold tracking-tight text-gray-900 dark:text-white">
-              Spring Fundamental
-            </h5>
-          </a>
+    <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+      <div className="flex">
+        <div className="w-60 h-auto">
+          <img src="/images/FOC.jpg" />
+        </div>
+        <div className="px-10 text-left flex flex-col">
+          <span className="text-3xl">Spring Fundamental 001</span>
+          <span className="text-xl">Total 3 hrs</span>
           <div class="flex items-center mt-2.5 mb-5">
             <div class="flex items-center space-x-1 rtl:space-x-reverse">
               <svg
@@ -70,26 +62,36 @@ function Course() {
               5.0
             </span>
           </div>
-          <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">
-              Free
-            </span>
-          </div>
+          <span className="text-xl">This is the best seller course for Spring developers. You just need to do again and again practice and watch. I appreciate you for joining to course.</span>
+          <span>Last Updated: 2024 Oct</span>
         </div>
-        </Link>
+      </div>
+      <div className="flex mt-5 lg:justify-start md:justify-start sm:justify-center">
+        <button className="rounded-lg bg-violet-500 hover:bg-violet-600  w-52 h-10 text-white ">Enroll Now</button>
+      </div>
+      <div className="p-5 my-5">
+        <p className=" text-left text-xl">
+        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+
+The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+        </p>
+      </div>
+      <div className="items-center justify-center">
+        <Accordian>
+            <AccordianItem value="1" trigger="Greeting">
+                This is the Accordian Item.
+            </AccordianItem>
+            <AccordianItem value="2" trigger="Installation">
+                This is the Accordian Item.
+            </AccordianItem>
+            <AccordianItem value="3" trigger="Basic Concept">
+                This is the Accordian Item.
+            </AccordianItem>
+            <AccordianItem value="4" trigger="Theories">
+                This is the Accordian Item.
+            </AccordianItem>
+        </Accordian>    
       </div>
     </div>
-  );
-}
-export default function Courses() {
-  return (
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
-        <Course/>
-        <Course/>
-        <Course/>
-        <Course/>
-        <Course/>
-        <Course/>
-</div>
   );
 }

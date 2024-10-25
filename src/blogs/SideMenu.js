@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const blogsCollection = [
   {
     title: "Benefit of Java",
@@ -46,7 +47,7 @@ export default function SideMenu() {
   const blogs = () =>
     blogsCollection.map((blog, index) => (
       <li key={index} className="text-left mb-4">
-        <a href="/">
+        <Link to="/blogDetail">
           <label className="underline text-sky-600 text-2xl">{blog.title}</label>
           <p>
             {blog.passage.length > 300
@@ -54,7 +55,7 @@ export default function SideMenu() {
               : blog.passage}
           </p>
           {blog.passage.length > 50 && readMoreText}
-        </a>
+        </Link>
       </li>
     ));
     const contents = () =>

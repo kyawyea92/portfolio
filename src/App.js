@@ -7,6 +7,8 @@ import HeaderMenu from './menu/header-menu';
 import Blogs from './blogs/Blogs';
 import SignIn from './registration/SignIn';
 import Courses from './courses/Courses';
+import BlogDetail from './blogs/BlogDetail';
+import CourseInfo from './courses/CourseInfo';
 
 function App() {
   return (
@@ -17,8 +19,10 @@ function App() {
         <Routes>
           <Route path='/' element={<BodyFunction/>}/>
           <Route path='/blogs' element={<Blogs/>} />
+          <Route path='/blogDetail' element={<BlogDetail/>}/>
           <Route path='/logIn' element={<SignIn/>} />
           <Route path="/courseList" element={<Courses/>}/>
+          <Route path='/courseInfo' element={<CourseInfo/>}/>
         </Routes>
         <FooterMenu/>
       </BrowserRouter>
