@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
+import Review from "../reviews/Review";
 import Accordian, { AccordianItem } from "./Accordion";
 
 export default function CourseInfo() {
+  const navigation = useNavigate();
+  const handlerEnroll = ()=>{
+    navigation('/logIn')
+  }
   return (
     <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <div className="flex">
@@ -67,7 +73,7 @@ export default function CourseInfo() {
         </div>
       </div>
       <div className="flex mt-5 lg:justify-start md:justify-start sm:justify-center">
-        <button className="rounded-lg bg-violet-500 hover:bg-violet-600  w-52 h-10 text-white ">Enroll Now</button>
+        <button className="rounded-lg bg-violet-500 hover:bg-violet-600  w-52 h-10 text-white " onClick={handlerEnroll}>Enroll Now</button>
       </div>
       <div className="p-5 my-5">
         <p className=" text-left text-xl">
@@ -92,6 +98,7 @@ The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for t
             </AccordianItem>
         </Accordian>    
       </div>
+      <Review/>
     </div>
   );
 }
