@@ -5,7 +5,7 @@ function Carousel () {
     {path:'/images/Carousel1.jpg',description :<label>I'm <span className='text-6xl font-oswald text-lime-400'>Kyaw Ye Lwin</span><br/><span>I have over </span><span>7+</span><span> years experience in software developement.</span></label>},
     {path:'/images/My_Photo.jpg',description :<label>Over 3 years of working experience in Software Development field as Project Leader.<br/>Strong experience in planning, scheduling, budgeting, execution, and delivery of software and web project.</label>},
     {path:'/images/FOC.jpg',description :<label>I'm extremely motivate person to share my knowledges.<br/>So I have some online courses.<br/> Don't worry all are free.</label>},
-    {path:'/images/Kingdom.png',description :<label>I have software development services also.</label>},
+    {path:'/images/Kingdom.jpg',description :<label>I have software development services also.</label>},
   ];
   useEffect(() => {
     const interval = setInterval(() => {
