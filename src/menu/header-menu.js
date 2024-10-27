@@ -110,7 +110,7 @@ export default function HeaderMenu() {
           <a href="/courseList" className="text-sm font-semibold leading-6 text-gray-900">
             Courses
           </a>
-          <a href="/companyInfo" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Company
           </a>
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
