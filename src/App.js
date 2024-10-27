@@ -10,6 +10,7 @@ import Courses from './courses/Courses';
 import BlogDetail from './blogs/BlogDetail';
 import CourseInfo from './courses/CourseInfo';
 import Review from './reviews/Review';
+import Contact from './contact/Contact';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/courseList" element={<Courses/>}/>
           <Route path='/courseInfo' element={<CourseInfo/>}/>
           <Route path='/companyInfo' element={<Review/>}/>
+          <Route path='/contact' element={<Contact/>} />
         </Routes>
         <FooterMenu/>
       </BrowserRouter>

@@ -113,7 +113,7 @@ export default function HeaderMenu() {
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             Company
           </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900">
             Contact
           </a>
         </PopoverGroup>
