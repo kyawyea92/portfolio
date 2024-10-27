@@ -9,6 +9,7 @@ import SignIn from './registration/SignIn';
 import Courses from './courses/Courses';
 import BlogDetail from './blogs/BlogDetail';
 import CourseInfo from './courses/CourseInfo';
+import Review from './reviews/Review';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/logIn' element={<SignIn/>} />
           <Route path="/courseList" element={<Courses/>}/>
           <Route path='/courseInfo' element={<CourseInfo/>}/>
+          <Route path='/companyInfo' element={<Review/>}/>
         </Routes>
         <FooterMenu/>
       </BrowserRouter>
