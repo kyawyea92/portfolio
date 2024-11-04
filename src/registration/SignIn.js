@@ -1,4 +1,14 @@
+import { useNavigate } from "react-router-dom";
+import APICaller from "../api/APICaller"
 export default function SignIn() {
+  const navigation = useNavigate();
+  const loginHandler = ()=>{
+    APICaller.login().then(data => {
+      if(data.code === 200){
+        navigation("/home")
+      }
+    });
+  }
     return (
       <>
         {/*
@@ -66,6 +76,7 @@ export default function SignIn() {
                 <button
                   type="submit"
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  onClick={loginHandler}
                 >
                   Sign in
                 </button>

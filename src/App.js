@@ -11,8 +11,10 @@ import BlogDetail from './blogs/BlogDetail';
 import CourseInfo from './courses/CourseInfo';
 import Review from './reviews/Review';
 import Contact from './contact/Contact';
-
+import Home from './home/Home';
 function App() {
+
+
   return (
     <div className="App font-default">
       
@@ -27,6 +29,7 @@ function App() {
           <Route path='/courseInfo' element={<CourseInfo/>}/>
           <Route path='/companyInfo' element={<Review/>}/>
           <Route path='/contact' element={<Contact/>} />
+          <Route path='/home' element={<Home/>} />
         </Routes>
         <FooterMenu/>
       </BrowserRouter>
