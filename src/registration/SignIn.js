@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import { useNavigate } from "react-router-dom";
 import APICaller from "../api/APICaller"
 export default function SignIn() {
@@ -5,20 +6,13 @@ export default function SignIn() {
   const loginHandler = ()=>{
     APICaller.login().then(data => {
       if(data.code === 200){
-        navigation("/home")
+        localStorage.setItem("data",JSON.stringify(data.data));
+        window.location.replace('http://localhost:5173')
       }
     });
   }
     return (
       <>
-        {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full bg-white">
-          <body class="h-full">
-          ```
-        */}
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="sm:mx-auto sm:w-full sm:max-w-sm">
             <img

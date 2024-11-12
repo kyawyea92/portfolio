@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import React, { Component }  from 'react';
 import Review from "../reviews/Review";
 import Accordian, { AccordianItem } from "./Accordion";
 import CourseHeader from "./CourseHeader";

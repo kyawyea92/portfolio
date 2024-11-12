@@ -1,6 +1,5 @@
+import React, { Component }  from 'react';
 import { Link } from "react-router-dom";
-import Carousel from "../body/Carousel";
-import Review from "../reviews/Review";
 
 function Course() {
   return (

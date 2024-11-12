@@ -1,13 +1,13 @@
+import React, { Component }  from 'react';
 import { createContext, useContext, useRef, useEffect, useState } from "react"
 
 const AccordianContext = createContext()
-
 export default function Accordian({ children, value, onChange, ...props }) {
   const [selected, setSelected] = useState(value)
 
-  useEffect(() => {
-    onChange?.(selected)
-  }, [selected])
+  useEffect(() => (
+    onChange?.selected
+  ), [selected])
 
   return (
     <ul {...props}>

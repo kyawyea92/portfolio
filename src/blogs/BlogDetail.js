@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 import Review from "../reviews/Review";
 export default function BlogDetail() {
   return (

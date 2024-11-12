@@ -1,3 +1,4 @@
+import React, { Component }  from 'react';
 const data = [
   { path: "/images/Java96.svg", altName: "Java" },
   { path: "/images/Spring96.svg", altName: "Spring" },
