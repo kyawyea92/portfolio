@@ -107,12 +107,12 @@ export default function HeaderMenu() {
           </Popover>
           <Link to="/blogs" className='text-sm font-semibold leading-6 text-gray-900'>Blogs</Link>
         
-          <a href="/courseList" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link to="/courses" className="text-sm font-semibold leading-6 text-gray-900">
             Courses
-          </a>
-          <a href="/contact" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link to="/contact" className="text-sm font-semibold leading-6 text-gray-900">
             Contact
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <Link to="/logIn" className="text-sm font-semibold leading-6 text-gray-900">
@@ -169,7 +169,7 @@ export default function HeaderMenu() {
                   Blogs
                 </a>
                 <a
-                  href="/courseList"
+                  href="/courses"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Courses

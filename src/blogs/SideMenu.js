@@ -47,7 +47,7 @@ export default function SideMenu() {
   const blogs = () =>
     blogsCollection.map((blog, index) => (
       <li key={index} className="text-left mb-4">
-        <Link to="/blogDetail">
+        <Link to="/blogs/detail">
           <label className="underline text-sky-600 text-2xl">{blog.title}</label>
           <p>
             {blog.passage.length > 300

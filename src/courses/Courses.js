@@ -5,7 +5,7 @@ function Course() {
   return (
     <div className="">
       <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-        <Link to="/courseInfo">
+        <Link to="/courses/info">
           <img class="rounded-t-lg" src="/images/FOC.jpg" alt="courseImages" />
 
           <div class="px-5 pb-5">
