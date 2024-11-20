@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import Carousel from "../body/Carousel";
 import Languages from "../body/Languages";
 import PageVisitor from "../body/PageVisitor";
+import AdvertiseCourse from '../courses/AdvertiseCourse';
 
 export default function BodyFunction(){
     return(
@@ -9,6 +10,7 @@ export default function BodyFunction(){
             <Carousel/>
             <PageVisitor/>
             <Languages />
+            <AdvertiseCourse/>
         </div>
     );
 }
