@@ -11,6 +11,9 @@ module.exports = {
         'caret': 'typewriter 2s steps(11) forwards, blink 1s steps(11) infinite 2s',
         'loop-scroll': 'loop-scroll 30s linear infinite',
       },
+      gridTemplateColumns: {
+        '2c': 'repeat(auto-fit, minmax(300px, 1fr))',
+      },  
       keyframes: {
         'loop-scroll': {
           from: { transform: 'translateX(0)' },
