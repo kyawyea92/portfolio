@@ -1,74 +1,54 @@
-import React, { Component }  from 'react';
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-const blogsCollection = [
+import { getAllBlogs } from "../firebase/firebaseAction";
+import '@blocknote/mantine/style.css'
+import '@blocknote/core/fonts/inter.css'
+
+const blogsContent = [
   {
-    title: "Benefit of Java",
-    passage:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32',
+    order: 1,
+    value: "Latest",
   },
   {
-    title: "Benefit of Java",
-    passage:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32',
+    order: 2,
+    value: "Java",
   },
   {
-    title: "Benefit of Java",
-    passage:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32',
-  },
-  {
-    title: "Benefit of Java",
-    passage:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32',
-  },
-  {
-    title: "Benefit of Java",
-    passage:
-      'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32',
+    order: 1,
+    value: "Spring Boot",
   },
 ];
-const blogsContent = [
-    {
-        order:1,
-        value:'Latest'
-    },
-    {
-        order:2,
-        value:'Java'
-    },
-    {
-        order:1,
-        value:'Spring Boot'
-    }
-]
 export default function SideMenu() {
-  
+  const [blogContents, setBlogContent] = useState([]);
+  useEffect(() => {
+    getAllBlogs().then((data) => {
+      Object.keys(data).forEach((key) => {
+        let blogs = data[key];
+        blogs["dataKey"] = key;
+      });
+      setBlogContent(Object.values(data));
+    });
+  }, []);
+  const editor = (blogDetail) => {
+    const blogDeatilParser = JSON.parse(blogDetail);
+    var selectionList;
+    if(blogDeatilParser[0]?.content[0]?.type==='text'){
+       selectionList=blogDeatilParser[0]?.content[0]?.text
+    }
+    return selectionList ;
+  };
   const readMoreText = <label className="text-cyan-500">Read More...</label>;
-  const blogs = () =>
-    blogsCollection.map((blog, index) => (
-      <li key={index} className="text-left mb-4">
-        <Link to="/blogs/detail">
-          <label className="underline text-sky-600 text-2xl">{blog.title}</label>
-          <p>
-            {blog.passage.length > 300
-              ? blog.passage.slice(0, 300).concat("...")
-              : blog.passage}
-          </p>
-          {blog.passage.length > 50 && readMoreText}
-        </Link>
+  const contents = () =>
+    blogsContent.map((blog) => (
+      <li key={blog.order}>
+        <a
+          href="#"
+          class="flex items-center p-2 hover:underline text-gray-900 rounded-lg dark:text-white group"
+        >
+          <span class="ms-3">{blog.value}</span>
+        </a>
       </li>
     ));
-    const contents = () =>
-        blogsContent.map((blog) => (
-            <li key={blog.order}>
-            <a
-              href="#"
-              class="flex items-center p-2 hover:underline text-gray-900 rounded-lg dark:text-white group"
-            >
-              <span class="ms-3">{blog.value}</span>
-            </a>
-          </li>
-        ));
   return (
     <div className="flex">
       <aside
@@ -77,14 +57,28 @@ export default function SideMenu() {
         aria-label="Sidebar"
       >
         <div class="h-full px-3 py-4 overflow-y-auto">
-          <ul class="space-y-2 font-medium">
-            {contents()}
-          </ul>
+          <ul class="space-y-2 font-medium">{contents()}</ul>
         </div>
       </aside>
 
       <div class="container mx-auto px-6">
-        <ul>{blogs()}</ul>
+        <ul>
+          { blogContents !== undefined && blogContents.map((data, key) => (
+            <li key={key} className="text-left mb-4">
+              <Link to={`/blogs/detail/${data.dataKey}`}>
+                <label className="underline text-sky-600 text-2xl">
+                  {data.title}
+                </label>
+                <p>
+                  {
+                    editor(data.blogDetail)
+                  }
+                </p>
+                {data.blogDetail.length > 50 && readMoreText}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
