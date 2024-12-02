@@ -4,7 +4,7 @@ import Review from "../reviews/Review";
 import '@blocknote/mantine/style.css'
 import '@blocknote/core/fonts/inter.css'
 import {getBlogById} from '../firebase/firebaseAction'
-import { Block, BlockNoteEditor, PartialBlock } from '@blocknote/core'
+import { BlockNoteEditor } from '@blocknote/core'
 import { useParams } from 'react-router-dom';
 
 export default function BlogDetail() {
