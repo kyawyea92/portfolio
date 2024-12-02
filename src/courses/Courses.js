@@ -81,11 +81,6 @@ export default function Courses() {
   return (
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
       <Course />
-      <Course />
-      <Course />
-      <Course />
-      <Course />
-      <Course />
     </div>
   );
 }
